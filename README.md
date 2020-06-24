@@ -1,2 +1,2 @@
 # ImportDB
-Projeto Simples em .NET para extrair dados de diversos bancos do mercado convertendo em objetos JSON
+Projeto Simples em .NET para extrair dados e converte-los em objetos JSON facilitando cargas de dados em APIs
