@@ -10,7 +10,7 @@ using SyncDB.Models;
 
 namespace SyncDB
 {
-    public partial class SyncDB : Form
+    public partial class ImportDB : Form
     {
         private string stringConexao { get; set; }
         private FbConnection conn { get; set; }
@@ -19,9 +19,10 @@ namespace SyncDB
         public Usuario usuario { get; set; }
         public string msgEnvio { get; set; }
         public bool concluido = false;
+        public bool conectou = false;
 
 
-        public SyncDB()
+        public ImportDB()
         {
             InitializeComponent();
             GerarSQL();
@@ -36,6 +37,8 @@ namespace SyncDB
             if (conn.State.ToString() == "Open")
             {
                 btnConectar.Text = "Conectado";
+                conectou = true;
+                btnImportar.Text = "Importar Dados";
             }
             else 
             {
@@ -47,6 +50,11 @@ namespace SyncDB
         }
         private void btnGerar_Click(object sender, EventArgs e)
         {
+            if (concluido | !conectou)
+            {
+                Application.Exit();
+            }
+
             try
             {
                 conn = new FbConnection { ConnectionString = stringConexao };
@@ -99,18 +107,15 @@ namespace SyncDB
                 }
               
                 msgEnvio = msgEnvio + msg;
-
+                btnConectar.Text = tabela + @":" + enviados.ToString() + @"/" + total.ToString();
             }
-
+                        
             MessageBox.Show("Importação Concluída \n" + msgEnvio );
             conn.Close();
             concluido = true;
+            btnConectar.Text = "Importação Concluída";
             btnImportar.Text = "SAIR";
-
-            if (concluido)
-            {
-                Application.Exit();
-            }
+           
         }
 
         private DataTable RetornaDT(FbCommand cmdComando)

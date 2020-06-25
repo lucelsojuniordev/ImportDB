@@ -1,6 +1,6 @@
 ﻿namespace SyncDB
 {
-    partial class SyncDB
+    partial class ImportDB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportDB));
             this.btnConectar = new System.Windows.Forms.Button();
             this.buscaBase = new System.Windows.Forms.OpenFileDialog();
             this.btnImportar = new System.Windows.Forms.Button();
@@ -56,7 +57,7 @@
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(270, 39);
             this.btnImportar.TabIndex = 11;
-            this.btnImportar.Text = "Importar Dados";
+            this.btnImportar.Text = "Sair";
             this.btnImportar.UseVisualStyleBackColor = true;
             this.btnImportar.Click += new System.EventHandler(this.btnGerar_Click);
             // 
@@ -68,7 +69,7 @@
             this.lbConect.Size = new System.Drawing.Size(0, 13);
             this.lbConect.TabIndex = 22;
             // 
-            // SyncDB
+            // ImportDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,9 +78,9 @@
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.btnConectar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SyncDB";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ImportDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Importação Dados";
             this.ResumeLayout(false);
             this.PerformLayout();
 
