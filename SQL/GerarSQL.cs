@@ -132,7 +132,8 @@ namespace SyncDB.SQL
             /* Regras */
             and f.cpf_cnpj is not null
             and f.razao is not null
-            and f.email is not null";
+            and f.email is not null
+            and replace(f.email,' ','') <> ''";
         }
 
     }

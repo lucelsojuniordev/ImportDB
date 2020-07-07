@@ -84,6 +84,12 @@
     <Compile Include="Connect\ConnApp.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Senha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Senha.Designer.cs">
+      <DependentUpon>Senha.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL\GerarSQL.cs" />
     <Compile Include="ImportDB.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Senha.resx">
+      <DependentUpon>Senha.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
