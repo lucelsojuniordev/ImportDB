@@ -8,12 +8,11 @@ namespace SyncDB.SQL
 {
     class GerarSQL
     {
-        private string sql { get; set; }
         public GerarSQL() { }
 
         public string Produtos()
         {       
-            return sql = @"select
+            return @"select
             substring(i.codigo from 1 for 6) Codigo,
             substring(i.descricao from 1 for 250) Descricao,
             substring(coalesce(i.descricaotecnica,
@@ -41,7 +40,7 @@ namespace SyncDB.SQL
 
         public string Favorecidos()
         {
-            return sql = @"select
+            return @"select
             substring(i.codigo from 1 for 250) Codigo,
             substring(i.razao from 1 for 250) Razao,
             substring(coalesce(i.nome,'Nome') from 1 for 250) Fantasia,
@@ -89,7 +88,7 @@ namespace SyncDB.SQL
 
         public string Empresa()
         {
-            return sql = @"select
+            return @"select
             substring(f.razao from 1 for 250) Razao,
             substring(coalesce(f.nome, f.razao) from 1 for 250) Fantasia,
             substring(coalesce(f.cpf_cnpj,'') from 1 for 14) CPF_CNPJ,
